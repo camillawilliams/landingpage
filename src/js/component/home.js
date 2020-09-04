@@ -2,8 +2,13 @@ import React from "react";
 import { Card } from "./card";
 import { Jumbo } from "./jumbo";
 import PropTypes from "prop-types";
+import { Nav } from "./nav";
 
 export function Home() {
+	const nav = {
+		text: "Navbar text with an inline element"
+	};
+
 	const jumbo = {
 		title: "A Warm Welcome!",
 		body:
@@ -45,27 +50,33 @@ export function Home() {
 			url: "Find out More!"
 		}
 	];
+
 	return (
-		<div className="container">
-			<Jumbo
-				title={jumbo.title}
-				body={jumbo.body}
-				buttonText={jumbo.buttonText}
-				url={jumbo.url}
-			/>
-			<div className="card-deck">
-				{card.map((card, index) => {
-					return (
-						<Card
-							key={index}
-							image={card.image}
-							title={card.title}
-							body={card.body}
-							buttonText={card.buttonText}
-							url={card.url}
-						/>
-					);
-				})}
+		<div className="nav-bar">
+			<Nav brand={nav.text} />
+
+			<div className="container">
+				<Jumbo
+					title={jumbo.title}
+					body={jumbo.body}
+					buttonText={jumbo.buttonText}
+					url={jumbo.url}
+				/>
+				<div className="card-deck">
+					{card.map((card, index) => {
+						return (
+							<Card
+								key={index}
+								image={card.image}
+								title={card.title}
+								body={card.body}
+								buttonText={card.buttonText}
+								url={card.url}
+							/>
+						);
+					})}
+				</div>
+				);
 			</div>
 		</div>
 	);

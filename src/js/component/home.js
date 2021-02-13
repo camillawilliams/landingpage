@@ -1,83 +1,47 @@
 import React from "react";
-import { Card } from "./card";
-import { Jumbo } from "./jumbo";
-import PropTypes from "prop-types";
-import { Nav } from "./nav";
+import { Nav } from "./nav.js";
+import { Jumbo } from "./jumbo.js";
+import { Card } from "./card.js";
+import { Footer } from "./footer.js";
 
 export function Home() {
-	const nav = {
-		text: "Navbar text with an inline element"
-	};
-
-	const jumbo = {
-		title: "A Warm Welcome!",
-		body:
-			"It uses utiliy classes for typography and spacing to space content out within the larger container",
-		buttonText: "Call to Action",
-		url: "www.google.com"
-	};
-	const card = [
-		{
-			image: "https://via.placeholder.com/300",
-			title: "My card",
-			body:
-				"Lorem ipsum dolor sit amet, consectrtur adipicing elit. Nulla rutrum in metus quis pellentesque.",
-			buttonText: "View",
-			url: "Find out More!"
-		},
-		{
-			image: "https://via.placeholder.com/300",
-			title: "My card",
-			body:
-				"Lorem ipsum dolor sit amet, consectrtur adipicing elit. Nulla rutrum in metus quis pellentesque.",
-			buttonText: "View",
-			url: "Find out More!"
-		},
-		{
-			image: "https://via.placeholder.com/300",
-			title: "My card",
-			body:
-				"Lorem ipsum dolor sit amet, consectrtur adipicing elit. Nulla rutrum in metus quis pellentesque.",
-			buttonText: "View",
-			url: "Find out More!"
-		},
-		{
-			image: "https://via.placeholder.com/300",
-			title: "My card",
-			body:
-				"Lorem ipsum dolor sit amet, consectrtur adipicing elit. Nulla rutrum in metus quis pellentesque.",
-			buttonText: "View",
-			url: "Find out More!"
-		}
-	];
-
 	return (
-		<div className="nav-bar">
-			<Nav brand={nav.text} />
-
+		<div>
+			<Nav />
 			<div className="container">
-				<Jumbo
-					title={jumbo.title}
-					body={jumbo.body}
-					buttonText={jumbo.buttonText}
-					url={jumbo.url}
-				/>
-				<div className="card-deck">
-					{card.map((card, index) => {
-						return (
-							<Card
-								key={index}
-								image={card.image}
-								title={card.title}
-								body={card.body}
-								buttonText={card.buttonText}
-								url={card.url}
-							/>
-						);
-					})}
+				<Jumbo />
+				<div className="row">
+					<Card
+						title="This is a Card Test!"
+						text="Lorem ipsum dolor sit amet, consectetur adipisicing
+						elit. Explicabo magni sapiente, tempore debitis beatae
+                        culpa natus architecto."
+						footer="Find out more!"
+					/>
+					<Card
+						title="This is a Card Test!"
+						text="Lorem ipsum dolor sit amet, consectetur adipisicing
+						elit. Explicabo magni sapiente, tempore debitis beatae
+                        culpa natus architecto."
+						footer="Find out more!"
+					/>
+					<Card
+						title="This is a Card Test!"
+						text="Lorem ipsum dolor sit amet, consectetur adipisicing
+						elit. Explicabo magni sapiente, tempore debitis beatae
+                        culpa natus architecto."
+						footer="Find out more!"
+					/>
+					<Card
+						title="This is a Card Test!"
+						text="Lorem ipsum dolor sit amet, consectetur adipisicing
+						elit. Explicabo magni sapiente, tempore debitis beatae
+                        culpa natus architecto."
+						footer="Find out more!"
+					/>
 				</div>
-				);
 			</div>
+			<Footer />
 		</div>
 	);
 }

@@ -1,6 +1,11 @@
-// import React from "react";
-// import PropTypes from "prop-types";
+import React from "react";
 
-// export default function Jumbo(props)  {
-//     return <footer className="container-fluid bg-dark text-white">2020</footer>;
-// }
+export function Footer() {
+	return (
+		<div
+			className="container-fluid bg-dark text-light d-flex justify-content-center align-bottom"
+			style={{ padding: "3rem" }}>
+			<span>Copyright @ Camilla V</span>
+		</div>
+	);
+}
